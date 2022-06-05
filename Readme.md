@@ -7,7 +7,7 @@ The organiser is able to insert their name into the input box and it shows:
 - The list of people in the race 
 - The total revenue for the race.
 
-This project uses HTML Jascript and CSS bootstrap
+This project uses HTML JavaScript and CSS bootstrap
 
 ## User Stories
 
