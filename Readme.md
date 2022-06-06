@@ -34,7 +34,7 @@ I can type in my Organiser Title and see the total revenue I have made
 
 If I had more time I would:
 
-- Sort the different columns.
+- Add filters to sort the different columns.
 - Add the number of people in a race filtered by certain requirements eg if they are in the "The Great North Run" and they are confirmed ect.
 - A way to indicate if someone has shown up for the race; essentially a virtual ticklist for the organisers to tick people off the list if they have arrived for the race.
 - Email people who are pending to remind them to confirm their attendance to the race.

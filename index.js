@@ -8,43 +8,47 @@ fetch("./assets/data.json")
     buildTable(myArray);
 });
 
+// Function below filters the data based on the user input
+// and updates the associated table
 $('#search-input').on('keyup', function(){    
     var value = $(this).val();
-    var data = searchTable(value, myArray)    
-    buildTable(data)
-    let totalRevenue = data.reduce((acc,cur) => acc+cur.ticketPrice.value,0)
+    var filteredStartList = searchTable(value, myArray)    
+    buildTable(filteredStartList)
+    let totalRevenue = filteredStartList.reduce((acc,cur) => acc+cur.ticketPrice.value,0)
     document.getElementById("total Revenue").innerHTML = `Total Revenue is £${totalRevenue}`;
 })
 
-
-function searchTable(value, data){
+// The function below searches the table for the input given by the user
+// It is filtered based on the Organiser Title name
+function searchTable(value, filteredStartList){
     var filteredData = []
-    for (var i = 0; i< data.length; i++){
+    for (var i = 0; i< filteredStartList.length; i++){
         value = value.toLowerCase();
-        var name = data[i].organiserTitle.toLowerCase();
+        var name = filteredStartList[i].organiserTitle.toLowerCase();
 
         if(name.startsWith(value)) {    
-            filteredData.push(data[i])
+            filteredData.push(filteredStartList[i])
         }
     }
     return filteredData
 }
 
-
-function buildTable(data){
+// This function builds a HTML table based on the filtered data
+// which is output to the DOM
+function buildTable(startList){
 
     var table = document.getElementById('myTable')
     table.innerHTML = ''
 
-    for (var i = 0; i < data.length; i++){
+    for (var i = 0; i < startList.length; i++){
         var row = `<tr>
-                        <td>${data[i].firstName}</td>
-                        <td>${data[i].lastName}</td>
-                        <td>${data[i].organiserTitle}</td>
-                        <td>${data[i].ticketPrice.value}</td>
-                        <td>${data[i].status}</td>
-                        <td>${data[i].ticketTitle}</td>
-                        <td>${data[i].eventTitle}</td>  
+                        <td>${startList[i].firstName}</td>
+                        <td>${startList[i].lastName}</td>
+                        <td>${startList[i].organiserTitle}</td>
+                        <td>${startList[i].ticketPrice.value}</td>
+                        <td>${startList[i].status}</td>
+                        <td>${startList[i].ticketTitle}</td>
+                        <td>${startList[i].eventTitle}</td>  
                    </tr>`
         table.innerHTML += row
     }
