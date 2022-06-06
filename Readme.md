@@ -3,7 +3,6 @@
 This project is a dashboard of startlist enteries.
 
 The organiser is able to insert their name into the input box and it shows:
-
 - The list of people in the race 
 - The total revenue for the race.
 

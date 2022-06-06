@@ -1,4 +1,3 @@
-
 fetch("./assets/data.json")
 .then(response => {
    return response.json();
